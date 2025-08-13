@@ -1,8 +1,12 @@
 # SimplyTrue Foods 🥗
 
-A modern, responsive e-commerce platform for a healthy food startup, specializing in wholesome snacks for busy professionals. The website is designed to be visually appealing and user-friendly, with a focus on transparency, nutrition, and a seamless shopping experience.
+A modern, responsive  platform for a healthy food startup, specializing in wholesome snacks for busy professionals. The website is designed to be visually appealing and user-friendly, with a focus on transparency, nutrition, and a seamless shopping experience.
+
+##Live Link
+https://simplytrue.netlify.app/
 
 <img width="1890" height="907" alt="Image" src="https://github.com/user-attachments/assets/7334f955-34f5-4164-8846-691b0b85044c" />
+
 
 ## 🌟 Features
 
