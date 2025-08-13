@@ -10,7 +10,7 @@ import Footer from './components/common/Footer';
 import ChatbotMockup from './components/common/ChatbotMockup';
 import About from './pages/About';
 import Community from './pages/Community';
-import BMICalculator from './components/common/BMICalculator';
+import BMICalculator from './components/common/BMICalculator.jsx';
 
 
 // Enhanced loading screen component
