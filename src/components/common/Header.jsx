@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react';
 
 // Mock cart item count for demonstration
@@ -12,6 +12,11 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to close mobile menu when link is clicked
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       {/* Google Fonts are typically imported in index.html or main CSS file */}
@@ -22,7 +27,7 @@ const Header = () => {
           {/* Logo and Navigation Section */}
           <div className="flex items-center">
             {/* Enhanced Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" onClick={closeMobileMenu} className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white text-lg font-bold">🌱</span>
               </div>
@@ -95,34 +100,62 @@ const Header = () => {
         {/* Enhanced Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-gradient-to-br from-white via-amber-50/90 to-orange-50/90 backdrop-blur-md border-t border-amber-200/50 shadow-xl">
-            <nav className="max-w-7xl mx-auto px-6 py-6">
+            {/* Overlay to close menu when clicked outside */}
+            <div 
+              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+              onClick={closeMobileMenu}
+            ></div>
+            
+            <nav className="relative z-50 max-w-7xl mx-auto px-6 py-6">
               <div className="flex flex-col space-y-4">
                 {/* Mobile Search */}
                 
 
                 {/* Mobile Navigation Links */}
                 <div className="space-y-1">
-                  <Link to="/" className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300">
+                  <Link 
+                    to="/" 
+                    onClick={closeMobileMenu}
+                    className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300"
+                  >
                     <span style={{fontFamily: 'Inter'}} className="font-medium">Home</span>
                   </Link>
-                  <Link to="/about" className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300">
+                  <Link 
+                    to="/about" 
+                    onClick={closeMobileMenu}
+                    className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300"
+                  >
                     <span style={{fontFamily: 'Inter'}} className="font-medium">About</span>
                   </Link>
-                  <Link to="/products" className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300">
+                  <Link 
+                    to="/products" 
+                    onClick={closeMobileMenu}
+                    className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300"
+                  >
                     <span style={{fontFamily: 'Inter'}} className="font-medium">Products</span>
                   </Link>
-                  <Link to="/community" className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300">
+                  <Link 
+                    to="/community" 
+                    onClick={closeMobileMenu}
+                    className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300"
+                  >
                     <span style={{fontFamily: 'Inter'}} className="font-medium">Community</span>
                   </Link>
-                  <a href="#" className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300">
+                  <button 
+                    onClick={closeMobileMenu}
+                    className="mobile-nav-link group flex items-center p-3 text-slate-700 hover:text-emerald-600 hover:bg-white/50 rounded-xl transition-all duration-300 w-full text-left"
+                  >
                     <User size={18} className="mr-3" />
                     <span style={{fontFamily: 'Inter'}} className="font-medium">Login / Account</span>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Mobile CTA Button */}
                 <div className="pt-4 border-t border-amber-200/50">
-                  <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-3 px-6 rounded-full font-semibold shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-[1.02]">
+                  <button 
+                    onClick={closeMobileMenu}
+                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-3 px-6 rounded-full font-semibold shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-[1.02]"
+                  >
                     <span style={{fontFamily: 'Inter'}}>Start Shopping</span>
                   </button>
                 </div>
