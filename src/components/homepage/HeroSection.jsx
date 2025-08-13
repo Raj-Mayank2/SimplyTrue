@@ -37,9 +37,11 @@ const HeroSection = () => {
         
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+          <Link to="/about">
           <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
             🍃 Meet Our Farmers
           </button>
+          </Link>
           <Link to="/products">
             <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg bg-white/90 backdrop-blur-sm text-emerald-700 shadow-xl border-2 border-emerald-200 hover:bg-white hover:border-emerald-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
               🥜 Explore All Snacks
