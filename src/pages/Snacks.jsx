@@ -78,11 +78,71 @@ const Snacks = () => {
       <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-r from-emerald-300/15 to-teal-300/15 rounded-full blur-2xl"></div>
 
       <div className="relative z-10">
-        {/* Search & Sort Bar */}
+        {/* Search & Sort Bar - Mobile Responsive */}
         <div className="bg-white/95 backdrop-blur-md shadow-lg border-b border-emerald-200/50 sticky top-0 z-30">
-          <div className="max-w-7xl mx-auto px-6 py-6">
-            <div className="flex items-center gap-4">
-              
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+            {/* Mobile Layout - Stacked */}
+            <div className="flex flex-col gap-3 sm:hidden">
+              {/* Search Bar - Full Width on Mobile */}
+              <div className="relative">
+                <Search size={18} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-emerald-400" />
+                <input
+                  type="text"
+                  placeholder="Search snacks..."
+                  value={currentFilters.search}
+                  onChange={handleSearchChange}
+                  className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm rounded-xl shadow-md border border-emerald-200/50 focus:outline-none focus:ring-3 focus:ring-emerald-500/20 focus:border-emerald-300 transition-all text-base"
+                />
+                {/* Clear search button for mobile */}
+                {currentFilters.search && (
+                  <button
+                    onClick={() => setCurrentFilters(prev => ({ ...prev, search: '' }))}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-600 transition-colors"
+                  >
+                    <X size={18} />
+                  </button>
+                )}
+              </div>
+
+              {/* Sort and Filter Row */}
+              <div className="flex items-center gap-3">
+                {/* Sort Dropdown - Flexible Width */}
+                <div className="relative flex-1">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="appearance-none w-full bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 pr-10 font-medium text-emerald-700 border border-emerald-200 focus:outline-none focus:ring-3 focus:ring-emerald-500/20 focus:border-emerald-300 cursor-pointer shadow-md hover:shadow-lg transition-all text-sm"
+                  >
+                    {filterOptions.sortOptions.map(option => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Mobile Filter Toggle */}
+                <button
+                  onClick={() => setIsFilterOpen(true)}
+                  className="flex items-center justify-center p-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md hover:shadow-lg transition-all relative min-w-[48px]"
+                >
+                  <Filter size={20} />
+                  {activeFiltersCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                      {activeFiltersCount}
+                    </span>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop Layout - Horizontal */}
+            <div className="hidden sm:flex items-center gap-4">
               {/* Search Bar */}
               <div className="flex-1 max-w-2xl">
                 <div className="relative">
@@ -92,8 +152,17 @@ const Snacks = () => {
                     placeholder="Search snacks..."
                     value={currentFilters.search}
                     onChange={handleSearchChange}
-                    className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm rounded-xl shadow-md border border-emerald-200/50 focus:outline-none focus:ring-3 focus:ring-emerald-500/20 focus:border-emerald-300 transition-all"
+                    className="w-full pl-12 pr-12 py-3 bg-white/90 backdrop-blur-sm rounded-xl shadow-md border border-emerald-200/50 focus:outline-none focus:ring-3 focus:ring-emerald-500/20 focus:border-emerald-300 transition-all"
                   />
+                  {/* Clear search button */}
+                  {currentFilters.search && (
+                    <button
+                      onClick={() => setCurrentFilters(prev => ({ ...prev, search: '' }))}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-600 transition-colors"
+                    >
+                      <X size={18} />
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -117,7 +186,7 @@ const Snacks = () => {
                 </div>
               </div>
 
-              {/* Mobile Filter Toggle */}
+              {/* Desktop Filter Toggle (Hidden on large screens where sidebar shows) */}
               <button
                 onClick={() => setIsFilterOpen(true)}
                 className="lg:hidden flex items-center justify-center p-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md hover:shadow-lg transition-all relative"
@@ -330,10 +399,10 @@ const Snacks = () => {
         )}
 
         {/* Products Section */}
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           {/* Results Info */}
           <div className="flex justify-between items-center mb-6">
-            <div className="text-emerald-600 font-medium">
+            <div className="text-emerald-600 font-medium text-sm sm:text-base">
               {displayedProducts.length} of {products.length} products
               {currentFilters.search && (
                 <span className="ml-2 text-emerald-500">for "{currentFilters.search}"</span>
@@ -343,7 +412,7 @@ const Snacks = () => {
 
           {/* Products Grid */}
           {displayedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {displayedProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -367,10 +436,10 @@ const Snacks = () => {
       </div>
 
       {/* Floating Food Elements */}
-      <div className="absolute top-32 right-1/4 animate-bounce text-3xl opacity-10">🌰</div>
-      <div className="absolute bottom-40 left-1/4 animate-pulse text-3xl opacity-10">🥨</div>
-      <div className="absolute top-2/3 right-1/6 animate-bounce text-3xl opacity-10">🍯</div>
-      <div className="absolute top-1/4 left-1/5 animate-pulse text-2xl opacity-10">🥜</div>
+      <div className="absolute top-32 right-1/4 animate-bounce text-3xl opacity-10 hidden sm:block">🌰</div>
+      <div className="absolute bottom-40 left-1/4 animate-pulse text-3xl opacity-10 hidden sm:block">🥨</div>
+      <div className="absolute top-2/3 right-1/6 animate-bounce text-3xl opacity-10 hidden sm:block">🍯</div>
+      <div className="absolute top-1/4 left-1/5 animate-pulse text-2xl opacity-10 hidden sm:block">🥜</div>
     </div>
   );
 };
