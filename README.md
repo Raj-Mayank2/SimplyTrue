@@ -145,15 +145,17 @@ No environment variables are required for basic functionality.
 <img width="1891" height="820" alt="Image" src="https://github.com/user-attachments/assets/ce79c3ac-8bb4-4870-a75d-93a42e2cff4f" />
 *Detailed product page with nutritional information and calorie calculator*
 
+
+
+### Meal of the day
+<img width="1594" height="650" alt="Image" src="https://github.com/user-attachments/assets/fce38965-2ef7-401f-8b81-86d587d9e7d3" />
+*Meal of the day with countdown of 24 hrs*
+
 ### BMI Calculator
 
 <img width="348" height="580" alt="Image" src="https://github.com/user-attachments/assets/2b1f524a-4985-43fd-8ab2-80df5bfb149c" />
 
 *Interactive BMI calculator with personalized snack recommendations*
-
-### BMI Calculator
-<img width="1594" height="650" alt="Image" src="https://github.com/user-attachments/assets/fce38965-2ef7-401f-8b81-86d587d9e7d3" />
-*Meal of the day with countdown of 24 hrs*
 
 
 ## 🎯 Key Features in Detail
