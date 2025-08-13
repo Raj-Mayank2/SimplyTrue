@@ -2,7 +2,7 @@
 
 A modern, responsive e-commerce platform for a healthy food startup, specializing in wholesome snacks for busy professionals. The website is designed to be visually appealing and user-friendly, with a focus on transparency, nutrition, and a seamless shopping experience.
 
-![SimplyTrue Foods Logo](https://via.placeholder.com/600x200/4ade80/ffffff?text=SimplyTrue+Foods)
+<img width="1890" height="907" alt="Image" src="https://github.com/user-attachments/assets/7334f955-34f5-4164-8846-691b0b85044c" />
 
 ## 🌟 Features
 
@@ -25,7 +25,6 @@ A non-functional but visually complete chatbot interface demonstrates a commitme
 Each snack has its own page featuring:
 - In-depth nutritional information
 - Real-time calorie calculator (based on quantity)
-- "Add to Cart" functionality
 - High-quality product images
 
 ### ⏳ Progressive Loading Screen
@@ -139,20 +138,17 @@ No environment variables are required for basic functionality.
 *Clean, modern homepage with hero section, BMI calculator, and meal of the day component*
 
 ### Product Catalog
-![Product Catalog Screenshot](https://via.placeholder.com/800x500/f3f4f6/374151?text=Product+Catalog+Screenshot)
+<img width="1910" height="905" alt="Image" src="https://github.com/user-attachments/assets/f7409efd-3077-4028-9373-8141a9c7d776" />
 *Interactive product catalog with advanced filtering and sorting options*
 
 ### Individual Product Page
-![Product Page Screenshot](https://via.placeholder.com/800x500/f3f4f6/374151?text=Product+Page+Screenshot)
+<img width="1891" height="820" alt="Image" src="https://github.com/user-attachments/assets/ce79c3ac-8bb4-4870-a75d-93a42e2cff4f" />
 *Detailed product page with nutritional information and calorie calculator*
 
 ### BMI Calculator
-![BMI Calculator Screenshot](https://via.placeholder.com/800x500/f3f4f6/374151?text=BMI+Calculator+Screenshot)
-*Interactive BMI calculator with personalized snack recommendations*
 
-### Mobile Responsive Design
-![Mobile Screenshot](https://via.placeholder.com/400x700/f3f4f6/374151?text=Mobile+View+Screenshot)
-*Fully responsive design optimized for mobile devices*
+<img width="348" height="580" alt="Image" src="https://github.com/user-attachments/assets/2b1f524a-4985-43fd-8ab2-80df5bfb149c" />
+*Interactive BMI calculator with personalized snack recommendations*
 
 ## 🎯 Key Features in Detail
 
@@ -162,14 +158,13 @@ No environment variables are required for basic functionality.
 - Educational content about healthy eating habits
 
 ### Product Filtering System
+-Search Functionality
 - Filter by category, price, calories, dietary restrictions
 - Sort by popularity, price, nutritional value
-- Search functionality with autocomplete
+
 
 ### Countdown Timer
-- Dynamic countdown for daily deals
-- Creates urgency to drive conversions
-- Automatically updates with new deals
+- Dynamic countdown for meal of the day
 
 ## 🔧 Development
 
@@ -178,37 +173,13 @@ No environment variables are required for basic functionality.
 - `npm start` - Runs the app in development mode
 - `npm test` - Launches the test runner
 - `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App (irreversible)
 
 ### Code Style
 - ESLint configuration for consistent code style
 - Prettier for automatic code formatting
 - Tailwind CSS utility classes for styling
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-- **Frontend Developer** - React, Tailwind CSS implementation
-- **UI/UX Designer** - Modern, responsive design
-- **Product Manager** - Feature planning and user experience
-
-## 🆘 Support
-
-For support, please reach out to:
-- Email: support@simplytruefoods.com
-- Documentation: [Project Wiki](https://github.com/your-username/simply-true-foods/wiki)
-- Issues: [GitHub Issues](https://github.com/your-username/simply-true-foods/issues)
 
 ## 🚀 Future Enhancements
 
@@ -221,15 +192,3 @@ For support, please reach out to:
 - [ ] Email notifications
 - [ ] Multi-language support
 
-## 📊 Performance
-
-- Lighthouse Score: 95+
-- Mobile-first responsive design
-- Optimized images and assets
-- Fast loading times with progressive loading
-
----
-
-**Made with ❤️ for healthy living**
-
-*SimplyTrue Foods - Nourishing busy professionals, one snack at a time.*
